@@ -1,0 +1,135 @@
+@import 'normalize';
+@import 'vars';
+@import 'mixins';
+@import 'extends';
+
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+}
+
+html, body {
+    min-height: 100vh;
+    font-family: $font_family_main;
+    font-size: $font_size_main;
+    background: $background_main;
+}
+.container {
+    max-width: $container_width;
+    margin: 0 auto;
+    position: relative;
+    padding-top: 40px;
+}
+.title{
+    @include title(4.3em, $color_gold, uppercase)
+}
+.subtitle{
+    @include title(1.25em, $text-transform:uppercase)
+}
+.section_subtitle{
+    @include title(1.71em)
+}
+.divider {
+    margin: 0 auto;
+    margin-bottom: 40px;
+    width: fit-content;
+    position: relative;
+    &::after, 
+    &::before {
+        content: '';
+        position: absolute;
+        bottom:50%;
+        width: 210px;
+        height: 2px;
+        background-color: #FFCC00;
+    }
+    &::after {
+        left: 25px;
+    }
+    &::before{
+        left: -215px; 
+        
+    }   
+}
+.flex-container{
+    display: flex;
+    width: 100%;
+}
+.flex_item{
+    flex-grow: 1;
+    flex-basis: 200px;
+}
+.section_title{
+    @include title(2.58em);    
+    position: relative;
+    margin-bottom: 60px;
+    &::after {
+        content: '';
+        position: absolute;
+        width: 100px;
+        left:calc(50% - 50px);
+        height: 2px;
+        bottom: -30px;
+        background-color: #FFCC00;
+    }
+}
+.img_item{
+    position: relative;
+    padding: 80px 85px;
+    &::after{
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 100%;
+        width: 2px;
+        height: 100%;
+        background-color: #FFCC00;
+
+    }
+}
+.section_item{
+padding: 70px 70px;
+padding-left: 85px;
+}
+.social{
+    margin: 0 auto;
+    width: fit-content;
+    &__link{
+        text-decoration: none;
+    }
+}
+.article{
+    max-width: 430px;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    text-align: center;
+    line-height: 24px;
+}
+.decor_flex_container{
+    margin: 0 auto;
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: space-between;
+    width: 50px;
+    height: 4px;
+    gap:5px;
+}
+.decor__item{    
+    background-color: #FFCC00;
+    flex-basis: 10px;
+    &_double{
+        flex-grow: 2;
+    }
+}
+.profile_link{
+    text-decoration: none;
+}
+.link_title{
+    margin: 0 auto;
+    padding: 5px 10px;
+    width: fit-content;
+    border: #FFCC00 1px solid;
+    @include title(1em, $text-transform:uppercase)
+}
+

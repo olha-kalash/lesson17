@@ -1,0 +1,8 @@
+@mixin title($size, $color: $color_title, $text-transform: none) {
+    font-size     : $size;
+    color         : $color;
+    letter-spacing: 1px;
+    text-align    : center;
+    text-transform: $text-transform;    
+    margin-top: 0;
+}
